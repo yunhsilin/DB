@@ -9,6 +9,7 @@
     <title>VOTE</title>
     <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/background.css" rel="stylesheet">
 <link class="icon" rel="icon" href="./img/icon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,7 +36,8 @@
     <!-- Custom styles for this template -->
     <link href="navbar-top-fixed.css" rel="stylesheet">
   </head>
-  <body>
+  <body style="background-image: url(img/back.jpg);background-repeat: no-repeat;background-attachment: fixed; background-position: center;
+  background-size: cover;">
     <script src="./js/chart.js"></script>
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <div class="container-fluid aabc">
@@ -63,12 +65,12 @@
 <br>
 <br>
 <br>
-<main class="container-fluid">
-  <div class="bg-light p-3 rounded textcenter">
-    <h1>浪浪認領養</h1>
+<main class="container-fluid nobackground">
+  <div class="bg-light p-3 rounded textcenter nobackground">
+    <h1 class="nobackground">浪浪認領養</h1>
   </div>
 </main>
-<div class="container textcenter" style="width: 80%;">
+<div class="container textcenter nobackground" style="width: 80%;">
   <select>
     <option>選擇寵物類型</option>
     <option>貓</option>
@@ -90,15 +92,15 @@
     <option>公</option>
     <option>母</option>
   </select>
-  <a style="font-size: larger; font-weight:bold">收容編號：<input type="text" name="animal_number" style="width: 215px;"></a>
-  <a style="font-size: larger; font-weight:bold">動物晶片號碼：<input type="text" name="chip_number" style="width: 215px;"></a>
+  <a class="nobackground" style="font-size: larger; font-weight:bold">收容編號：<input type="text" name="animal_number" style="width: 215px;"></a>
+  <a class="nobackground" style="font-size: larger; font-weight:bolder">動物晶片號碼：<input type="text" name="chip_number" style="width: 215px;"></a>
   <br>
   <button class="bottonstyle">搜尋</button>
 </div>
 
 
-<div class="textcenter" style="margin: 0px auto">
-  <div style="width: 80%; margin: 0px auto;">
+<div class="textcenter nobackground" style="margin: 0px auto;">
+  <div class="nobackground" style="width: 80%; margin: 0px auto;">
     <div class="imgdiv textcenter">
       <img src="img/vava.ico" class="img">
       <br>
