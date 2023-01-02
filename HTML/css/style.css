@@ -2408,7 +2408,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-secondary {
-  color: #212529;
+  color: #ffffff;
   background-color: #65C178;
   border-color: #65C178;
 }
@@ -9920,7 +9920,77 @@ h6 {
   display: block;
   margin: 0 auto;
 }
+/* ---------- SIGNUP ---------- */
+.SignUp {
+  width: 600px;
+}
+.SignUp__header {
+  background-color:#65C178;
+  border-top-left-radius: 1.25em;
+  border-top-right-radius: 1.25em;
+  color: #fff;
+  padding: 1.25em 1.625em;
+}
+.SignUp__header :first-child {
+  margin-top: 0;
+}
 
+.SignUp__header :last-child {
+  margin-bottom: 0;
+}
+
+.SignUp h2 .icon {
+  margin-right: 14px;
+}
+
+.SignUp__form {
+  background-color: #fff;
+  border-bottom-left-radius: 1.25em;
+  border-bottom-right-radius: 1.25em;
+  color: #777;
+  display: grid;
+  gap: 0.875em;
+  padding: 1.25em 1.625em;
+}
+
+.SignUp input {
+  border-radius: 0.1875em;
+}
+.SignUp input[type="text"] {
+  background-color: #eee;
+  color: #777;
+  padding: 0.25em 0.625em;
+  width: 90%;
+}
+.SignUp input[type="date"]{
+  background-color: #eee;
+  color: #777;
+  padding: 0.25em 0.625em;
+  width: 40%;
+}
+.SignUp input[type="email"],
+.SignUp input[type="password"]{
+  background-color: #eee;
+  color: #777;
+  padding: 0.25em 0.625em;
+  width: 100%;
+}
+
+.SignUp input[type="submit"] {
+  display: block;
+  margin: 0 auto;
+}
+.SignUp select{
+  width: 30%;
+  border-radius: 0.25em;
+  border-color: #000
+  ;
+}
+.formPG{
+  display: inline-flex;
+  flex-direction: column;
+}
+/* ---------- DIALOG ---------- */
 dialog{
   border: none;
   box-shadow: 0 2px 6px #ccc;

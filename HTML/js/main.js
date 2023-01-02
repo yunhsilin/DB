@@ -83,7 +83,9 @@
 })(jQuery);
 
 let btn=document.querySelector("#loginbtn");
+let signupbtn=document.querySelector("#signupbtn");
 let loginwindow=document.querySelector("#loginpg");
+let signupwindow=document.querySelector("#signuppg");
 let bodyhide = document.querySelector("#bodyhide");
 let close = document.querySelector("#sign_In");
 btn.addEventListener("click", function(){
@@ -94,9 +96,17 @@ btn.addEventListener("click", function(){
     loginwindow.showModal();
 })
 document.addEventListener("click", function(e){
-    if(e.target == loginwindow){
+    if(e.target == loginwindow || e.target == signupwindow){
         loginwindow.close();
+        signupwindow.close();
         bodyhide.style.display="none";
         document.body.style.overflow="visible";
     }
 },true)
+signupbtn.addEventListener("click", function(){
+
+    bodyhide.style.display="block";
+    bodyhide.style.height=document.body.clientHeight+"px";
+    document.body.style.overflow="hidden";
+    signupwindow.showModal();
+})

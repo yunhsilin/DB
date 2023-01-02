@@ -113,7 +113,15 @@
                     </div> -->
                     
                 </div>
-                <button id="loginbtn" class="btn btn-lg btn-primary px-3 d-none d-lg-block">登入</button>
+                <div>
+                    <button id="loginbtn" class="btn btn-lg btn-primary px-3 d-none d-lg-block m-xl-3">登入</button>
+                    
+                </div>
+                
+                <div>
+                    <button id="signupbtn" class="btn btn-lg btn-secondary px-3 d-none d-lg-block">註冊</button>
+                </div>
+                
                 <!-- <a href="login.html" class="btn btn-lg btn-primary px-3 d-none d-lg-block">登入</a> -->
             </div>
         </nav>
@@ -147,6 +155,53 @@
             </form>
         
           </div>
+    </dialog>
+    <dialog id="signuppg" >
+        <div class="SignUp">
+  
+            <header class="SignUp__header">
+              <h2><svg class="icon">
+                  <use xlink:href="#icon-lock" />
+                </svg>Sign Up</h2>
+            </header>
+        
+            <form action="#" class="SignUp__form" method="POST">
+                <div style="display: inline-flex; flex-direction: row;">
+                    <div class="formPG">
+                        <label for="Firstname">First Name:</label>
+                        <input type="text" id="Firstname" name="firstname" placeholder="FirstName">
+                    </div>
+                    <div class="formPG"> 
+                        <label for="Lastname">Last Name:</label>
+                        <input type="text" id="Lastname" name="lastname" placeholder="LastName">
+                    </div>
+                </div>
+                <div class="formPG">
+                    <label for="gender">Gender:</label>
+                    <select class="custom-select" id="gender">
+                        <option>男</option>
+                        <option>女</option>
+                    </select>
+                </div>
+                <div class="formPG">
+                    <label for="gender">Birthday:</label>
+                    <input type="date" id="birthday" name="birthday" value="2002-04-06" min="1963-01-01" max="2023-01-01">
+                </div>
+                <div>
+                    <label for="email">E-mail address:</label>
+                    <input type="email" id="email" name="email" placeholder="mail@address.com">
+                </div>
+        
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="password">
+                </div>
+        
+                <div>
+                    <input class="button btn btn-lg px-3 d-none d-lg-block" type="submit" value="Sign Up" id="sign_up">
+                </div>
+            </form>
+        </div>
     </dialog>
 
     <!-- Services Start -->
