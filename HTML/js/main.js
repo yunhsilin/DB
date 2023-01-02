@@ -82,3 +82,21 @@
     
 })(jQuery);
 
+let btn=document.querySelector("#loginbtn");
+let loginwindow=document.querySelector("#loginpg");
+let bodyhide = document.querySelector("#bodyhide");
+let close = document.querySelector("#sign_In");
+btn.addEventListener("click", function(){
+
+    bodyhide.style.display="block";
+    bodyhide.style.height=document.body.clientHeight+"px";
+    document.body.style.overflow="hidden";
+    loginwindow.showModal();
+})
+document.addEventListener("click", function(e){
+    if(e.target == loginwindow){
+        loginwindow.close();
+        bodyhide.style.display="none";
+        document.body.style.overflow="visible";
+    }
+},true)

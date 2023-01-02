@@ -30,6 +30,7 @@
 
 <body>
     <!-- Topbar Start -->
+    <div id="bodyhide"></div>
     <div class="container-fluid">
         <!-- <div class="row bg-secondary py-2 px-lg-5">
             <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
@@ -112,12 +113,41 @@
                     </div> -->
                     
                 </div>
-                <a href="login.html" class="btn btn-lg btn-primary px-3 d-none d-lg-block">登入</a>
+                <button id="loginbtn" class="btn btn-lg btn-primary px-3 d-none d-lg-block">登入</button>
+                <!-- <a href="login.html" class="btn btn-lg btn-primary px-3 d-none d-lg-block">登入</a> -->
             </div>
         </nav>
     </div>
     <!-- Navbar End -->
-
+    <dialog id="loginpg" >
+        <div class="login">
+  
+            <header class="login__header">
+              <h2><svg class="icon">
+                  <use xlink:href="#icon-lock" />
+                </svg>Sign In</h2>
+            </header>
+        
+            <form action="#" class="login__form" method="POST">
+        
+              <div>
+                <label for="email">E-mail address</label>
+                <input type="email" id="email" name="email" placeholder="mail@address.com">
+              </div>
+        
+              <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="password">
+              </div>
+        
+              <div>
+                <input class="button btn btn-lg px-3 d-none d-lg-block" type="submit" value="Sign In" id="sign_In">
+              </div>
+        
+            </form>
+        
+          </div>
+    </dialog>
 
     <!-- Carousel Start -->
     <div class="container-fluid p-0">
