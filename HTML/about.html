@@ -29,6 +29,7 @@
 </head>
 
 <body>
+    <div id="bodyhide"></div>
     <!-- Topbar Start -->
     <div class="container-fluid">
         <!--div class="row bg-secondary py-2 px-lg-5">
@@ -99,7 +100,7 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                 <div class="navbar-nav mr-auto py-0">
-                    <a href="index.html" class="nav-item nav-link">浪浪公告</a>
+                    <a href="index.html" class="nav-item nav-link ">浪浪公告</a>
                     <a href="service.html" class="nav-item nav-link">浪浪認領養</a>
                     <a href="about.html" class="nav-item nav-link">收容所</a>
                     <a href="contact.html" class="nav-item nav-link">支持我們</a>
@@ -112,11 +113,42 @@
                     </div> -->
                     
                 </div>
-                <a href="login.html" class="btn btn-lg btn-primary px-3 d-none d-lg-block">登入</a>
+                <button id="loginbtn" class="btn btn-lg btn-primary px-3 d-none d-lg-block">登入</button>
+                <!-- <a href="login.html" class="btn btn-lg btn-primary px-3 d-none d-lg-block">登入</a> -->
             </div>
         </nav>
     </div>
     <!-- Navbar End -->
+    <dialog id="loginpg" >
+        <div class="login">
+  
+            <header class="login__header">
+              <h2><svg class="icon">
+                  <use xlink:href="#icon-lock" />
+                </svg>Sign In</h2>
+            </header>
+        
+            <form action="#" class="login__form" method="POST">
+        
+              <div>
+                <label for="email">E-mail address</label>
+                <input type="email" id="email" name="email" placeholder="mail@address.com">
+              </div>
+        
+              <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="password">
+              </div>
+        
+              <div>
+                <input class="button btn btn-lg px-3 d-none d-lg-block" type="submit" value="Sign In" id="sign_In">
+              </div>
+        
+            </form>
+        
+          </div>
+    </dialog>
+
 
 
     <!-- About Start -->
