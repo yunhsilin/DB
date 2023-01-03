@@ -10010,17 +10010,30 @@ dialog::backdrop {
   display: none;
   z-index: 2;
 } 
-/* ---------- DIALOG ---------- */
+/* ---------- report ---------- */
 .reportPage{
-  width: 1000px;
-  height: 800px;
-  background-color: #ED6436;
-  border-radius: 1.25em;
-  margin: 100px;
+  width: 100%;
+  height: 100%;
 }
 .reportheader{
-  background-color: #fff
-
-  color: #fff;
-  padding: 1.25em 1.625em;
+  width: 100%;
+  height: 50px;
+  background-color: var(--primary);
+  padding-top: 10px;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+}
+.reportform{
+  background-color: #fff;
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+}
+.fixplace_left{
+  padding-left: 10%;
+}
+.fixplace_top{
+  padding-top: 10%;
+}
+.reportinput{
+  border: #050505;
 }

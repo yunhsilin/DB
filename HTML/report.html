@@ -25,7 +25,7 @@
     <!-- Customized Bootstrap Stylesheet -->
     	<link href="css/style.css" rel="stylesheet">
 	</head>
-	<body class="align bg-light">
+	<body>
 		<div class="container-fluid">
 			<div class="row py-3 px-lg-5">
 				<div class="col-lg-4">
@@ -56,26 +56,29 @@
 				</div>
 			</nav>
 		</div>
-		<div class="reportPage">
-			<header class="login__header">
-				<h2><svg class="icon">
+		<div class="reportPage bg-light align-items-center align">
+			<div style="width: 80%;">
+				<header class="reportheader text-center">
+					<h2><svg class="icon">
 					<use xlink:href="#icon-lock" />
-				  </svg>Sign In</h2>
-			  </header>
-		  
-            <form action="#" class="" method="POST">
-            	<div>
-            		<label for="email">E-mail address</label>
-            		<input type="email" id="email" name="email" placeholder="mail@address.com">
-            	</div>
-            	<div>
-            		<label for="password">Password</label>
-            		<input type="password" id="password" name="password" placeholder="password">
-            	</div>
-            	<div>
-            		<input class="button btn btn-lg px-3 d-none d-lg-block" type="submit" value="Sign In" id="sign_In">
-            	</div>
-            </form>
+				  	</svg>領養申請表單</h2>
+			  	</header>
+            	<form action="#" class="reportform" method="POST">
+            		<div class="fixplace_left">
+            			<label for="email">E-mail address<input type="email" class="form-control border-0 reportinput" placeholder="Your Email" required="required" /></label>
+            			
+            		</div>
+            		<div>
+            			<label for="password">Password</label>
+            			<input type="password" id="password" name="password" placeholder="password">
+            		</div>
+            		<!-- <div>
+            			<input class="button btn btn-lg px-3 d-none d-lg-block" type="submit" value="Sign In" id="sign_In">
+            		</div> -->
+            	</form>
+			</div>
+
+			
         </div>
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
