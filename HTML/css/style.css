@@ -10010,6 +10010,7 @@ dialog::backdrop {
   display: none;
   z-index: 2;
 } 
+<<<<<<< HEAD
 /* application */
 #ft-form {
   font-family: inherit;
@@ -10425,4 +10426,19 @@ dialog::backdrop {
 }
 #ft-form .btns > input[type=submit]:hover {
   background-color: #f8f9fa
+=======
+/* ---------- DIALOG ---------- */
+.reportPage{
+  width: 1000px;
+  height: 800px;
+  background-color: #ED6436;
+  border-radius: 1.25em;
+  margin: 100px;
+}
+.reportheader{
+  background-color: #fff
+
+  color: #fff;
+  padding: 1.25em 1.625em;
+>>>>>>> 88716e075b539690fbd82453deef3fecc13575ca
 }
