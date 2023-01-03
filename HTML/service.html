@@ -32,58 +32,11 @@
     <div id="bodyhide"></div>
     <!-- Topbar Start -->
     <div class="container-fluid">
-        <!--div class="row bg-secondary py-2 px-lg-5">
-            <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
-                <div class="d-inline-flex align-items-center">
-                    <a class="text-white pr-3" href="">FAQs</a>
-                    <span class="text-white">|</span>
-                    <a class="text-white px-3" href="">Help</a>
-                    <span class="text-white">|</span>
-                    <a class="text-white pl-3" href="">Support</a>
-                </div>
-            </div>
-            <div class="col-lg-6 text-center text-lg-right">
-                <div class="d-inline-flex align-items-center">
-                    <a class="text-white px-3" href="">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a class="text-white px-3" href="">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a class="text-white px-3" href="">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a class="text-white px-3" href="">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a class="text-white pl-3" href="">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                </div>
-            </div>
-        </div>-->
         <div class="row py-3 px-lg-5">
             <div class="col-lg-4">
                 <a href="" class="navbar-brand d-none d-lg-block">
                     <h1 class="m-0 display-5 text-capitalize"><span class="text-primary">The</span>Wayhome</h1>
                 </a>
-            <!-- </div>
-            <div class="col-lg-8 text-center text-lg-right">
-                <div class="d-inline-flex align-items-center">
-                    <div class="d-inline-flex flex-column text-center pr-3 border-right">
-                        <h6>Opening Hours</h6>
-                        <p class="m-0">8.00AM - 9.00PM</p>
-                    </div>
-                    <div class="d-inline-flex flex-column text-center px-3 border-right">
-                        <h6>Email Us</h6>
-                        <p class="m-0">Thewayhome@ntut.com</p>
-                    </div>
-                    <div class="d-inline-flex flex-column text-center pl-3">
-                        <h6>Call Us</h6>
-                        <p class="m-0">0972 345 678</p>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
     <!-- Topbar End -->
@@ -104,6 +57,14 @@
                     <a href="service.html" class="nav-item nav-link">浪浪目錄</a>
                     <a href="about.html" class="nav-item nav-link">收容所</a>
                     <a href="contact.html" class="nav-item nav-link">支持我們</a>
+                    <!-- <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="blog.html" class="dropdown-item">Blog Grid</a>
+                            <a href="single.html" class="dropdown-item">Blog Detail</a>
+                        </div>
+                    </div> -->
+                    
                 </div>
                 <div>
                     <button id="loginbtn" class="btn btn-lg btn-primary px-3 d-none d-lg-block m-xl-3">登入</button>
@@ -220,13 +181,25 @@
                                     <option value="2">母</option>
                                 </select>
                             </div>
-
+                            <div class="form-group">
+                                <select class="custom-select border-0 px-4" style="height: 47px;">
+                                    <option selected>選擇品種</option>
+                                    <option value="0">無限制</option>
+                                </select>
+                            </div>
                             <div class="form-group">
                                 <select class="custom-select border-0 px-4 " style="height: 47px;">
                                     <option selected>選擇收容所</option>
                                     <option value="0">無限制</option>
                                 </select>
                             </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control border-0 p-4" placeholder="動物收容編號">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control border-0 p-4" placeholder="動物晶片號碼">
+                            </div>
+                            
                             <div>
                                 <button class="btn btn-dark btn-block border-0 py-3" type="submit">搜尋</button>
                             </div>
@@ -297,8 +270,9 @@
                         </div>
                         <div class="team-social d-flex align-items-center justify-content-center bg-dark">
                             <!-- class = "team-social" 更改隱藏欄位-->
-                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="pet.html"><i class="fas fa-angle-double-right"></i></a>
-                            <a style="color:#ED6436;">詳細資訊</a> 
+                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fas fa-angle-double-right"></i></a>
+                            <a style="color:#ED6436;">前往認領養</a> 
+                            
                         </div>
                     </div>
                 </div>
@@ -314,8 +288,9 @@
                             <h5>收容所:<span>未知</span></h5>
                         </div>
                         <div class="team-social d-flex align-items-center justify-content-center bg-dark">
-                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="pet.html"><i class="fas fa-angle-double-right"></i></a>
-                            <a style="color:#ED6436;">詳細資訊</a> 
+                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fas fa-angle-double-right"></i></a>
+                            <a style="color:#ED6436;">前往認領養</a> 
+                            
                         </div>
                     </div>
                 </div>
@@ -331,8 +306,9 @@
                             <h5>收容所:<span>未知</span></h5>
                         </div>
                         <div class="team-social d-flex align-items-center justify-content-center bg-dark">
-                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="pet.html"><i class="fas fa-angle-double-right"></i></a>
-                            <a style="color:#ED6436;">詳細資訊</a> 
+                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fas fa-angle-double-right"></i></a>
+                            <a style="color:#ED6436;">前往認領養</a> 
+                            
                         </div>
                     </div>
                 </div>
@@ -348,13 +324,17 @@
                             <h5>收容所:<span>未知</span></h5>
                         </div>
                         <div class="team-social d-flex align-items-center justify-content-center bg-dark">
-                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="pet.html"><i class="fas fa-angle-double-right"></i></a>
-                            <a style="color:#ED6436;">詳細資訊</a> 
+                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fas fa-angle-double-right"></i></a>
+                            <a style="color:#ED6436;">前往認領養</a> 
+                            
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white mt-5 px-sm-3 px-md-5">
@@ -365,6 +345,7 @@
             </div>
             
             <div class="col-lg-7 col-md-12">
+                
                     <div class="col-md-4 mb-5">
                         <h5 class="text-primary mb-4">Newsletter</h5>
                         <form action="">
@@ -387,12 +368,9 @@
         <div class="row">
             <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
                 <p class="m-0 text-white">
-                    &copy; <a class="text-white font-weight-bold" href="index.html">The Way Home</a>
+                    &copy; <a class="text-white font-weight-bold" href="#">The Way Home</a>
                 </p>
-                <p class="m-1 text-white">
-                    &copy; <a class="text-white font-weight-bold2" href="#">Web Admin 登入</a>
-                </p>
-            </div>
+
         </div>
     </div>
     <!-- Footer End -->
