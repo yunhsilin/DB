@@ -66,7 +66,6 @@
                     <button id="signupbtn" class="btn btn-lg btn-secondary px-3 d-none d-lg-block">註冊</button>
                 </div>
                 
-                <!-- <a href="login.html" class="btn btn-lg btn-primary px-3 d-none d-lg-block">登入</a> -->
             </div>
         </nav>
     </div>
@@ -75,25 +74,25 @@
         <div class="login">
   
             <header class="login__header">
-              <h2><svg class="icon">
+              <h2 style="color: white;"><svg class="icon">
                   <use xlink:href="#icon-lock" />
-                </svg>Sign In</h2>
+                </svg>登入</h2>
             </header>
         
             <form action="#" class="login__form" method="POST">
         
               <div>
-                <label for="email">E-mail address</label>
+                <label for="email">電子信箱:</label>
                 <input type="email" id="email" name="email" placeholder="mail@address.com">
               </div>
         
               <div>
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="password">
+                <label for="password">密碼:</label>
+                <input type="password" id="password" name="password" >
               </div>
         
               <div>
-                <input class="button btn btn-lg px-3 d-none d-lg-block" type="submit" value="Sign In" id="sign_In">
+                <input class="button btn btn-lg px-3 d-none d-lg-block" type="submit" value="登入" id="sign_In">
               </div>
         
             </form>
@@ -104,45 +103,53 @@
         <div class="SignUp">
   
             <header class="SignUp__header">
-              <h2><svg class="icon">
+              <h2 style="color: white;"><svg class="icon">
                   <use xlink:href="#icon-lock" />
-                </svg>Sign Up</h2>
+                </svg>註冊</h2>
             </header>
         
             <form action="#" class="SignUp__form" method="POST">
                 <div style="display: inline-flex; flex-direction: row;">
                     <div class="formPG">
-                        <label for="Firstname">First Name:</label>
-                        <input type="text" id="Firstname" name="firstname" placeholder="FirstName">
+                        <label for="Firstname">姓:</label>
+                        <input type="text" id="Firstname" name="firstname" placeholder="姓氏">
                     </div>
                     <div class="formPG"> 
-                        <label for="Lastname">Last Name:</label>
-                        <input type="text" id="Lastname" name="lastname" placeholder="LastName">
+                        <label for="Lastname">名:</label>
+                        <input type="text" id="Lastname" name="lastname" placeholder="名字">
                     </div>
                 </div>
                 <div class="formPG">
-                    <label for="gender">Gender:</label>
+                    <label for="gender">性別:</label>
                     <select class="custom-select" id="gender">
                         <option>男</option>
                         <option>女</option>
                     </select>
                 </div>
                 <div class="formPG">
-                    <label for="gender">Birthday:</label>
+                    <label for="birthday">出生日期:</label>
                     <input type="date" id="birthday" name="birthday" value="2002-04-06" min="1963-01-01" max="2023-01-01">
                 </div>
+                <label class="my-n2">地址:</label>
+                <div style="display: inline-flex; flex-direction: row;" class="formPG">
+                    <input class="m-xl-2" type="text" id="city" placeholder="縣/市">
+                    <input class="m-xl-2" type="text" id="area" placeholder="行政區">
+                    <input class="m-xl-2" type="text" id="town" placeholder="鄉/鎮/里">
+                    <input class="m-xl-2" type="text" id="road" placeholder="街/路">
+                </div>
+                
                 <div>
-                    <label for="email">E-mail address:</label>
+                    <label for="email">電子信箱:</label>
                     <input type="email" id="email" name="email" placeholder="mail@address.com">
                 </div>
         
                 <div>
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" placeholder="password">
+                    <label for="password">密碼:</label>
+                    <input type="password" id="password" name="password" placeholder="密碼">
                 </div>
         
                 <div>
-                    <input class="button btn btn-lg px-3 d-none d-lg-block" type="submit" value="Sign Up" id="sign_up">
+                    <input class="button btn btn-lg px-3 d-none d-lg-block" type="submit" value="註冊" id="sign_up">
                 </div>
             </form>
         </div>
