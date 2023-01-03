@@ -10010,3 +10010,17 @@ dialog::backdrop {
   display: none;
   z-index: 2;
 } 
+/* ---------- DIALOG ---------- */
+.reportPage{
+  width: 1000px;
+  height: 800px;
+  background-color: #ED6436;
+  border-radius: 1.25em;
+  margin: 100px;
+}
+.reportheader{
+  background-color: #fff
+
+  color: #fff;
+  padding: 1.25em 1.625em;
+}
