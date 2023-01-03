@@ -25,7 +25,7 @@
     <!-- Customized Bootstrap Stylesheet -->
     	<link href="css/style.css" rel="stylesheet">
 	</head>
-	<body>
+	<body class="bg-light">
 		<div class="container-fluid">
 			<div class="row py-3 px-lg-5">
 				<div class="col-lg-4">
@@ -56,26 +56,83 @@
 				</div>
 			</nav>
 		</div>
-		<div class="reportPage bg-light align-items-center align">
-			<div style="width: 80%;">
+		<div class="reportPage align">
+			<div class="reportsize">
 				<header class="reportheader text-center">
-					<h2><svg class="icon">
+					<h2 style="color: white;"><svg class="icon">
 					<use xlink:href="#icon-lock" />
 				  	</svg>領養申請表單</h2>
 			  	</header>
-            	<form action="#" class="reportform" method="POST">
-            		<div class="fixplace_left">
-            			<label for="email">E-mail address<input type="email" class="form-control border-0 reportinput" placeholder="Your Email" required="required" /></label>
-            			
-            		</div>
-            		<div>
-            			<label for="password">Password</label>
-            			<input type="password" id="password" name="password" placeholder="password">
-            		</div>
-            		<!-- <div>
-            			<input class="button btn btn-lg px-3 d-none d-lg-block" type="submit" value="Sign In" id="sign_In">
-            		</div> -->
-            	</form>
+				<form  action="SEND ADDRESS reportform" id="ft-form" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
+					<fieldset>
+					  <legend></legend>
+						<label class="fixplace_left fixplace_right">
+							收容所
+							<select>
+								<option></option>
+							</select>
+						</label>
+					  <label class="fixplace_left fixplace_right">
+						寵物收容編號 *
+						<input type="text" name="Pet_number" required>
+					  </label>
+					  <div class="two-cols">
+						<label class="fixplace_left">
+						  寵物類別 *
+						  <select name="Pet_catgory">
+							<option>貓</option>
+							<option>狗</option>
+							<option>其他</option>
+						  </select>
+						</label>
+						<label class="fixplace_right">
+						  寵物品種 *
+						  <select name="Pet_catgory">
+							<option></option>
+						  </select>
+						</label>
+					  </div>
+					  
+						<label class="fixplace_left fixplace_right">
+						  姓名 *
+						  <input type="text" name="Name" required>
+						</label >
+					  <label class="fixplace_left fixplace_right">
+						性別
+						<select name="gender">
+							<option>男</option>
+							<option>女</option>
+						</select>
+					  </label>
+						<label class="fixplace_left fixplace_right">
+						  連絡電話 *
+						  <input type="tel" name="Phone" required>
+						</label>
+						<label class="fixplace_left fixplace_right">
+						  身分證字號 *
+						  <input type="text" name="PersonalID" required>
+						</label>
+					  <div class="two-cols">
+						<label class="fixplace_left">
+						  地址 *
+						  <input type="text" name="city" placeholder="縣市" required>
+						</label>
+						<label>
+							<input type="text" name="area" placeholder="行政區" required>
+						</label>
+						<label>
+							<input type="text" name="town" placeholder="鄉/鎮/里" required>
+						</label>
+						<label class="fixplace_right">
+							<input type="text" name="road" placeholder="街道/路" required>
+						</label>
+					  </div>
+					
+					</fieldset>
+					<div class="fixplace_left">
+						<button class="btn btn-lg btn-primary btn-block border-0" style="width: 200px;" type="submit">送出</button>
+					</div>
+				</form>
 			</div>
 
 			

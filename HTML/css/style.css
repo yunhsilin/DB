@@ -10426,10 +10426,17 @@ dialog::backdrop {
 #ft-form .btns > input[type=submit]:hover {
   background-color: #f8f9fa
 }
-/* ---------- DIALOG ------- */
+/* ---------- report ------- */
 .reportPage{
   width: 100%;
   height: 100%;
+}
+.reportsize{
+  width: 60%;
+  height: 100%;
+  margin-top: 5%;
+  background-color: #ffffff;
+  border-radius: 1.5rem;
 }
 .reportheader{
   width: 100%;
@@ -10445,10 +10452,13 @@ dialog::backdrop {
   border-bottom-right-radius: 1.5rem;
 }
 .fixplace_left{
-  padding-left: 10%;
+  padding-left: 5%;
 }
 .fixplace_top{
-  padding-top: 10%;
+  padding-top: 3%;
+}
+.fixplace_right{
+  padding-right: 5%;
 }
 .reportinput{
   border: #050505;
