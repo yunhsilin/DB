@@ -1,3 +1,23 @@
+<?php
+   require_once 'db.php';
+   $con=' where ';
+   $category=$_POST['category'];
+   if ($category!='無限制'){
+      $con.="category='$category' and ";
+   }
+   $sex=$_POST['sex'];
+   if ($sex!='無限制'){
+      $con.="sex='$sex' and ";
+   }
+   $shelter=$_POST['shelter'];
+   if ($shelter!='無限制'){
+      $con.="shelter='$shelter' and ";
+   }
+
+   if ($con!=''){
+      $con=substr($con,0,strlen($con)-5);
+   }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +29,7 @@
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="img/icon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet"> 
@@ -32,19 +52,19 @@
     <div id="bodyhide"></div>
     <!-- Topbar Start -->
     <div class="container-fluid">
-       
         <div class="row py-3 px-lg-5">
             <div class="col-lg-4">
                 <a href="" class="navbar-brand d-none d-lg-block">
                     <h1 class="m-0 display-5 text-capitalize"><span class="text-primary">The</span>Wayhome</h1>
                 </a>
+            </div>
         </div>
     </div>
     <!-- Topbar End -->
 
 
-     <!-- Navbar Start -->
-     <div class="container-fluid p-0">
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0">
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-lg-5">
             <a href="" class="navbar-brand d-block d-lg-none">
                 <h1 class="m-0 display-5 text-capitalize font-italic text-white"><span class="text-primary">目錄</span>選單</h1>
@@ -55,7 +75,7 @@
             <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                 <div class="navbar-nav mr-auto py-0">
                     <a href="index.html" class="nav-item nav-link ">浪浪公告</a>
-                    <a href="service.html" class="nav-item nav-link">浪浪目錄</a>
+                    <a href="service.php" class="nav-item nav-link">浪浪目錄</a>
                     <a href="about.html" class="nav-item nav-link">收容所</a>
                     <a href="contact.html" class="nav-item nav-link">支持我們</a>
                 </div>
@@ -67,7 +87,7 @@
                 <div>
                     <button id="signupbtn" class="btn btn-lg btn-secondary px-3 d-none d-lg-block">註冊</button>
                 </div>
-
+                
             </div>
         </nav>
     </div>
@@ -156,168 +176,56 @@
             </form>
         </div>
     </dialog>
-  
-    <!-- Booking Start -->
-    <div class="container-fluid bg-light">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5">
-                    <div class="bg-primary py-5 px-4 px-sm-5">
-                        <form class="py-5">
-                            <div class="form-group">
-                                <select class="custom-select border-0 px-4" style="height: 47px;">
-                                    <option selected>選擇寵物類型</option>
-                                    <option value="0">無限制</option>
-                                    <option value="1">貓</option>
-                                    <option value="2">狗</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <select class="custom-select border-0 px-4" style="height: 47px;">
-                                    <option selected>選擇性別</option>
-                                    <option value="0">無限制</option>
-                                    <option value="1">公</option>
-                                    <option value="2">母</option>
-                                </select>
-                            </div>
 
-                            <div class="form-group">
-                                <select class="custom-select border-0 px-4 " style="height: 47px;">
-                                    <option selected>選擇收容所</option>
-                                    <option value="0">無限制</option>
-                                </select>
-                            </div>
-                            <div>
-                                <button class="btn btn-dark btn-block border-0 py-3" type="submit">搜尋</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-lg-7 py-5 py-lg-0 px-3 px-lg-5">
-                    <h1 class="display-4 mb-4">尋找 <span class="text-primary">心儀的浪浪</span></h1>
-                    <p>左側填入各個條件來讓你更快速地尋找心儀的浪浪吧!</p>
-                    <div class="row py-2">
-                        <div class="col-sm-6">
-                            <div class="d-flex flex-column">
-                                <div class="d-flex align-items-center mb-2">
-                                    <h1 class="flaticon-house font-weight-normal text-secondary m-0 mr-3"></h1>
-                                    <h5 class="text-truncate m-0">寵物類型</h5>
-                                </div>
-                                <p>想養貓或狗的選項可以選到，想養其他的選項選其他呦!</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex flex-column">
-                                <div class="d-flex align-items-center mb-2">
-                                    <h1 class="flaticon-food font-weight-normal text-secondary m-0 mr-3"></h1>
-                                    <h5 class="text-truncate m-0">寵物性別</h5>
-                                </div>
-                                <p>寵物性別不同差別很大，想好要養哪個吧!</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex flex-column">
-                                <div class="d-flex align-items-center mb-2">
-                                    <h1 class="flaticon-grooming font-weight-normal text-secondary m-0 mr-3"></h1>
-                                    <h5 class="text-truncate m-0">品種</h5>
-                                </div>
-                                <p class="m-0">每個類型的浪浪都有很多品種，不清楚可以選擇無限制。</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex flex-column">
-                                <div class="d-flex align-items-center mb-2">
-                                    <h1 class="flaticon-toy font-weight-normal text-secondary m-0 mr-3"></h1>
-                                    <h5 class="text-truncate m-0">收容所</h5>
-                                </div>
-                                <p class="m-0">選個方便前往的收容所，來看看那邊有甚麼心儀的浪浪吧</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
+
+    <!-- Team Start -->
     <div class="container mt-5 pt-5 pb-3" >
         <div class="d-flex flex-column text-center mb-5">
-            <h1 class="display-4 m-0"><span class="text-primary">浪浪</span>目錄</h1>
+            <h4 class="text-secondary mb-3">目錄</h4>
+            <h1 class="display-4 m-0"><span class="text-primary">浪浪</span>公告</h1>
         </div>
-        <div class="row">
+	<div class="row">
+            <?php
+            $sql  = "select category,sex,varity,shelter,img,prmk from pet $con";
+            $result =$db->query($sql);
+	    while($row=$result->fetchRow()){
+		$category=$row[0];
+		$sex=$row[1];
+		$varity=$row[2];
+		$shelter=$row[3];
+		$img=$row[4];
+		$prmk=$row[5];
+            ?>
             <div class="col-lg-3 col-md-6">
                 <div class="team card position-relative overflow-hidden border-0 mb-4">
                     <!-- class = "team" 更改介紹欄大小-->
-                    <img class="card-img-top" src="img/Pet001.png" style="height: 300px;width: 255px;" alt="">
+		    <img class="card-img-top" src="img/<?php echo $img;?>" style="height: 300px;width: 255px;margin-left: auto;margin-right: auto;" alt="">
                     <div class="card-body text-center p-0">
                         <div class="team-text d-flex flex-column justify-content-center bg-light">
-                            <h5>類別:<span>貓</span></h5>
-                            <h5>性別:<span>公</span></h5>
-                            <h5>品種:<span>混種貓</span></h5>
-                            <h5>收容所:<span>未知</span></h5>
+			<h5>類別:<span><?php echo $category;?></span></h5>
+                            <h5>性別:<span><?php echo $sex;?></span></h5>
+                            <h5>品種:<span><?php echo $varity;?></span></h5>
+                            <h5>收容所:<span><?php echo $shelter;?></span></h5>
                         </div>
                         <div class="team-social d-flex align-items-center justify-content-center bg-dark">
                             <!-- class = "team-social" 更改隱藏欄位-->
-                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="pet.html"><i class="fas fa-angle-double-right"></i></a>
+			    <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="pet.php?prmk=<?php echo $prmk;?>"><i class="fas fa-angle-double-right"></i></a>
                             <a style="color:#ED6436;">詳細資訊</a> 
+
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="team card position-relative overflow-hidden border-0 mb-4">
-                    <img class="card-img-top" src="img/Pet002.jpg" style="height: 300px;width: 255px;" alt="">
-                    <div class="card-body text-center p-0">
-                        <div class="team-text d-flex flex-column justify-content-center bg-light">
-                            <h5>類別:<span>貓</span></h5>
-                            <h5>性別:<span>公</span></h5>
-                            <h5>品種:<span>虎斑貓</span></h5>
-                            <h5>收容所:<span>未知</span></h5>
-                        </div>
-                        <div class="team-social d-flex align-items-center justify-content-center bg-dark">
-                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="pet.html"><i class="fas fa-angle-double-right"></i></a>
-                            <a style="color:#ED6436;">詳細資訊</a> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="team card position-relative overflow-hidden border-0 mb-4">
-                    <img class="card-img-top" src="img/Pet003.png" style="height: 300px;width: 255px;" alt="">
-                    <div class="card-body text-center p-0">
-                        <div class="team-text d-flex flex-column justify-content-center bg-light">
-                            <h5>類別:<span>貓</span></h5>
-                            <h5>性別:<span>母</span></h5>
-                            <h5>品種:<span>白貓</span></h5>
-                            <h5>收容所:<span>未知</span></h5>
-                        </div>
-                        <div class="team-social d-flex align-items-center justify-content-center bg-dark">
-                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="pet.html"><i class="fas fa-angle-double-right"></i></a>
-                            <a style="color:#ED6436;">詳細資訊</a> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="team card position-relative overflow-hidden border-0 mb-4">
-                    <img class="card-img-top" src="img/Pet004.png" style="height: 300px;width: 255px;" alt="">
-                    <div class="card-body text-center p-0">
-                        <div class="team-text d-flex flex-column justify-content-center bg-light">
-                            <h5>類別:<span>狗</span></h5>
-                            <h5>性別:<span>公</span></h5>
-                            <h5>品種:<span>邊境牧羊犬</span></h5>
-                            <h5>收容所:<span>未知</span></h5>
-                        </div>
-                        <div class="team-social d-flex align-items-center justify-content-center bg-dark">
-                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="pet.html"><i class="fas fa-angle-double-right"></i></a>
-                            <a style="color:#ED6436;">詳細資訊</a> 
-                    </div>
-                </div>
-            </div>
+	    </div>
+        <?php }?>
         </div>
     </div>
+    <!-- Team End -->
 
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-white mt-5 px-sm-3 px-md-5">
+
+   
+     <!-- Footer Start -->
+     <div class="container-fluid bg-dark text-white mt-5 px-sm-3 px-md-5">
         <div class="row pt-5">
             <div class="col-lg-5 col-md-12 mb-5">
                 <h1 class="mb-3 display-5 text-capitalize text-white"><span class="text-primary">The </span>Way Home</h1>
@@ -325,6 +233,7 @@
             </div>
             
             <div class="col-lg-7 col-md-12">
+                <div class="row">
                     <div class="col-md-4 mb-5">
                         <h5 class="text-primary mb-4">Newsletter</h5>
                         <form action="">
@@ -347,12 +256,12 @@
         <div class="row">
             <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
                 <p class="m-0 text-white">
-                    &copy; <a class="text-white font-weight-bold" href="index.html">The Way Home</a>
+                    &copy; <a class="text-white font-weight-bold" href="">The Way Home</a>
                 </p>
                 <p class="m-1 text-white">
                     &copy; <a class="text-white font-weight-bold2" href="#">Web Admin 登入</a>
                 </p>
-            </div>
+
         </div>
     </div>
     <!-- Footer End -->

@@ -1,0 +1,470 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 13.4
+-- Dumped by pg_dump version 13.4
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- Name: application_prmk_seq; Type: SEQUENCE; Schema: public; Owner: mavis
+--
+
+CREATE SEQUENCE public.application_prmk_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.application_prmk_seq OWNER TO mavis;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- Name: application; Type: TABLE; Schema: public; Owner: mavis
+--
+
+CREATE TABLE public.application (
+    prmk integer DEFAULT nextval('public.application_prmk_seq'::regclass),
+    numbering character varying(20),
+    pdate date,
+    member_id character varying(20),
+    pet_number character varying(20),
+    shelter_name character varying(50)
+);
+
+
+ALTER TABLE public.application OWNER TO mavis;
+
+--
+-- Name: belong_to_prmk_seq; Type: SEQUENCE; Schema: public; Owner: mavis
+--
+
+CREATE SEQUENCE public.belong_to_prmk_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.belong_to_prmk_seq OWNER TO mavis;
+
+--
+-- Name: belong_to; Type: TABLE; Schema: public; Owner: mavis
+--
+
+CREATE TABLE public.belong_to (
+    prmk integer DEFAULT nextval('public.belong_to_prmk_seq'::regclass),
+    pet_number character varying(50),
+    shelter_name character varying(20)
+);
+
+
+ALTER TABLE public.belong_to OWNER TO mavis;
+
+--
+-- Name: investigation_location_prmk_seq; Type: SEQUENCE; Schema: public; Owner: mavis
+--
+
+CREATE SEQUENCE public.investigation_location_prmk_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.investigation_location_prmk_seq OWNER TO mavis;
+
+--
+-- Name: investigation_location; Type: TABLE; Schema: public; Owner: mavis
+--
+
+CREATE TABLE public.investigation_location (
+    prmk integer DEFAULT nextval('public.investigation_location_prmk_seq'::regclass),
+    application_numbering character varying(20),
+    type_of_location character varying(20),
+    size_of_place integer
+);
+
+
+ALTER TABLE public.investigation_location OWNER TO mavis;
+
+--
+-- Name: members_prmk_seq; Type: SEQUENCE; Schema: public; Owner: mavis
+--
+
+CREATE SEQUENCE public.members_prmk_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.members_prmk_seq OWNER TO mavis;
+
+--
+-- Name: members; Type: TABLE; Schema: public; Owner: mavis
+--
+
+CREATE TABLE public.members (
+    prmk integer DEFAULT nextval('public.members_prmk_seq'::regclass),
+    personal_id character varying(20),
+    cname character varying(20),
+    sex character varying(10),
+    tel character varying(20),
+    birth_date date,
+    email character varying(50),
+    password character varying(20),
+    city character varying(20),
+    district character varying(20),
+    town character varying(20),
+    street character varying(30),
+    num_of_pet integer,
+    wadmin_id character varying(20)
+);
+
+
+ALTER TABLE public.members OWNER TO mavis;
+
+--
+-- Name: pet_prmk_seq; Type: SEQUENCE; Schema: public; Owner: mavis
+--
+
+CREATE SEQUENCE public.pet_prmk_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.pet_prmk_seq OWNER TO mavis;
+
+--
+-- Name: pet; Type: TABLE; Schema: public; Owner: mavis
+--
+
+CREATE TABLE public.pet (
+    prmk integer DEFAULT nextval('public.pet_prmk_seq'::regclass),
+    containment_number character varying(30),
+    sex character varying(4),
+    wafer character varying(30),
+    adoption_status character varying(30),
+    describe text,
+    category character varying(30),
+    announcement_time date,
+    varity character varying(30),
+    length_of_stay character varying(30),
+    rescue_location character varying(30),
+    shelter character varying(30),
+    size character varying(30),
+    member_id character varying(30),
+    shelter_name character varying(30),
+    img character varying(100)
+);
+
+
+ALTER TABLE public.pet OWNER TO mavis;
+
+--
+-- Name: pet1; Type: TABLE; Schema: public; Owner: mavis
+--
+
+CREATE TABLE public.pet1 (
+    prmk integer DEFAULT nextval('public.pet_prmk_seq'::regclass),
+    sex character varying(10),
+    classify character varying(30),
+    variety character varying(30),
+    style character varying(30),
+    chip character varying(10),
+    stauts character varying(30),
+    descript text,
+    shelter character varying(30),
+    ptime time without time zone,
+    livedates integer,
+    location character varying(50),
+    img character varying(100)
+);
+
+
+ALTER TABLE public.pet1 OWNER TO mavis;
+
+--
+-- Name: shelter_prmk_seq; Type: SEQUENCE; Schema: public; Owner: mavis
+--
+
+CREATE SEQUENCE public.shelter_prmk_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.shelter_prmk_seq OWNER TO mavis;
+
+--
+-- Name: shelter; Type: TABLE; Schema: public; Owner: mavis
+--
+
+CREATE TABLE public.shelter (
+    prmk integer DEFAULT nextval('public.shelter_prmk_seq'::regclass),
+    cname character varying(20),
+    tel character varying(20),
+    nursing_num character varying(20),
+    max_of_containment character varying(20),
+    city character varying(20),
+    district character varying(20),
+    town character varying(20),
+    street character varying(20),
+    sadmin_id character varying(20),
+    wadmin_id character varying(20)
+);
+
+
+ALTER TABLE public.shelter OWNER TO mavis;
+
+--
+-- Name: shelter_admin_prmk_seq; Type: SEQUENCE; Schema: public; Owner: mavis
+--
+
+CREATE SEQUENCE public.shelter_admin_prmk_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.shelter_admin_prmk_seq OWNER TO mavis;
+
+--
+-- Name: shelter_admin; Type: TABLE; Schema: public; Owner: mavis
+--
+
+CREATE TABLE public.shelter_admin (
+    prmk integer DEFAULT nextval('public.shelter_admin_prmk_seq'::regclass),
+    id character varying(20),
+    password character varying(20),
+    wadmin_id character varying(20)
+);
+
+
+ALTER TABLE public.shelter_admin OWNER TO mavis;
+
+--
+-- Name: web_admin_prmk_seq; Type: SEQUENCE; Schema: public; Owner: mavis
+--
+
+CREATE SEQUENCE public.web_admin_prmk_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.web_admin_prmk_seq OWNER TO mavis;
+
+--
+-- Name: web_admin; Type: TABLE; Schema: public; Owner: mavis
+--
+
+CREATE TABLE public.web_admin (
+    prmk integer DEFAULT nextval('public.web_admin_prmk_seq'::regclass),
+    id character varying(20),
+    password character varying(20)
+);
+
+
+ALTER TABLE public.web_admin OWNER TO mavis;
+
+--
+-- Data for Name: application; Type: TABLE DATA; Schema: public; Owner: mavis
+--
+
+COPY public.application (prmk, numbering, pdate, member_id, pet_number, shelter_name) FROM stdin;
+1	ap00000	2023-01-01	p00000	112010202	新北市板橋區公立動物之家
+2	ap00001	2022-12-30	p00003	111-a035d	 雲林縣流浪動物收容所
+3	ap00002	2022-12-30	p00006	1112141	宜蘭縣流浪動物中途之家
+4	ap00003	2023-01-01	p00002	faaag11112220001	臺中市動物之家南屯園區
+5	ap00004	2023-01-01	p00004	1111227c02	金門縣動物收容中心
+\.
+
+
+--
+-- Data for Name: belong_to; Type: TABLE DATA; Schema: public; Owner: mavis
+--
+
+COPY public.belong_to (prmk, pet_number, shelter_name) FROM stdin;
+1	112010202	新北市板橋區公立動物之家
+3	1112141	宜蘭縣流浪動物中途之家
+4	1111227c02	金門縣動物收容中心
+2	111-a035d	雲林縣流浪動物收容所
+\.
+
+
+--
+-- Data for Name: investigation_location; Type: TABLE DATA; Schema: public; Owner: mavis
+--
+
+COPY public.investigation_location (prmk, application_numbering, type_of_location, size_of_place) FROM stdin;
+1	ap00000	大樓	65
+2	ap00001	大樓	50
+3	ap00002	大樓	25
+4	ap00003	公寓	30
+5	ap00004	公寓	45
+\.
+
+
+--
+-- Data for Name: members; Type: TABLE DATA; Schema: public; Owner: mavis
+--
+
+COPY public.members (prmk, personal_id, cname, sex, tel, birth_date, email, password, city, district, town, street, num_of_pet, wadmin_id) FROM stdin;
+1	p00000	金材昱	男	0978556313	1983-04-02	jaeuck@gmail.com	password	台北市	中正區		公園路1004號	2	\N
+2	p00001	黃曉明	男	0935745853	1979-08-11	xiaom@gmail.com	password	宜蘭縣	五結鄉	成興村	利寶路60號	0	\N
+3	p00002	金正恩	男	0988519744	1985-05-23	nuclear@gmail.com	password	台中市	西屯區		河南路二段711號	3	\N
+4	p00003	麥叔叔	女	0941298890	1970-06-25	mcfree@gmail.com	password	雲林縣	斗南鎮		延平路二段455號	0	\N
+5	p00004	陳小美	女	0912534688	1992-02-07	bmbm@gmail.com	password	金門縣	金湖鎮		漁村160號	1	\N
+7	p00006	何筲久	女	0925355655	1989-09-12	alcoholgood@gmail.com	password	宜蘭縣	宜蘭市		女中路二段185號	1	\N
+6	p00005	梅梁新	男	0933549012	1991-04-23	win34567@gmail.com	password	桃園市	中壢區		公園路二段206號	0	\N
+\.
+
+
+--
+-- Data for Name: pet; Type: TABLE DATA; Schema: public; Owner: mavis
+--
+
+COPY public.pet (prmk, containment_number, sex, wafer, adoption_status, describe, category, announcement_time, varity, length_of_stay, rescue_location, shelter, size, member_id, shelter_name, img) FROM stdin;
+5	112010202	公	0	在養中	未絕育	貓	2023-01-02	混種貓	0	集英里錦西街	新北市板橋區公立動物之家	小		新北市板橋區公立動物之家	Pet001.png
+8	faaag11112220001	公	0	暫時不適合認養		狗	2022-12-22	邊境牧羊犬	11	太平區	臺中市動物之家南屯園區	小		臺中市動物之家南屯園區	Pet004.png
+6	111-a035d	公	0	適合認養	動物名嘟嘟	貓	2022-12-30	虎斑貓	3	明志動物醫院	雲林縣流浪動物收容所	中		雲林縣流浪動物收容所	Pet002.jpg
+7	1112141	母	0	適合認養	進所原因政府處理案件	貓	2022-11-29	白貓	34	蘇澳鎮	宜蘭縣流浪動物中途之家	小		宜蘭縣流浪動物中途之家	Pet003.png
+\.
+
+
+--
+-- Data for Name: pet1; Type: TABLE DATA; Schema: public; Owner: mavis
+--
+
+COPY public.pet1 (prmk, sex, classify, variety, style, chip, stauts, descript, shelter, ptime, livedates, location, img) FROM stdin;
+1	公	虎斑貓	貓	\N	\N	\N	\N	台北收容所	\N	\N	\N	Pet001.png
+2	公	虎斑貓	貓	\N	\N	\N	\N	桃園收容所	\N	\N	\N	Pet002.jpg
+3	母	白貓	貓	\N	\N	\N	\N	台中收容所	\N	\N	\N	Pet003.png
+4	母	牧羊犬	狗	\N	\N	\N	\N	高雄收容所	\N	\N	\N	Pet004.png
+\.
+
+
+--
+-- Data for Name: shelter; Type: TABLE DATA; Schema: public; Owner: mavis
+--
+
+COPY public.shelter (prmk, cname, tel, nursing_num, max_of_containment, city, district, town, street, sadmin_id, wadmin_id) FROM stdin;
+1	新北市板橋區公立動物之家	02-89662158	204	347	新北市	板橋區		板城路28-1號	bqadmin01	webadmin00
+2	雲林縣流浪動物收容所	05-5523300	300	373	雲林縣	斗六市		雲林路二段517號	yladmin01	webadmin00
+3	臺中市動物之家南屯園區	04-23850976	223	400	臺中市	南屯區		中台路601號	tgntadmin01	webadmin00
+4	金門縣動物收容中心	082-336625	110	200	金門縣	金湖鎮		裕民農莊20號	gmadmin01	webadmin00
+5	宜蘭縣流浪動物中途之家	03-9602350	248	270	宜蘭縣	五結鄉	成興村	利寶路60號	yladmin01	webadmin00
+\.
+
+
+--
+-- Data for Name: shelter_admin; Type: TABLE DATA; Schema: public; Owner: mavis
+--
+
+COPY public.shelter_admin (prmk, id, password, wadmin_id) FROM stdin;
+1	bqadmin01	password	webadmin00
+2	yladmin01	password	webadmin00
+3	tgntadmin01	password	webadmin00
+4	gmadmin01	password	webadmin00
+5	yladmin01	password	webadmin00
+\.
+
+
+--
+-- Data for Name: web_admin; Type: TABLE DATA; Schema: public; Owner: mavis
+--
+
+COPY public.web_admin (prmk, id, password) FROM stdin;
+1	webadmin00	password
+\.
+
+
+--
+-- Name: application_prmk_seq; Type: SEQUENCE SET; Schema: public; Owner: mavis
+--
+
+SELECT pg_catalog.setval('public.application_prmk_seq', 5, true);
+
+
+--
+-- Name: belong_to_prmk_seq; Type: SEQUENCE SET; Schema: public; Owner: mavis
+--
+
+SELECT pg_catalog.setval('public.belong_to_prmk_seq', 4, true);
+
+
+--
+-- Name: investigation_location_prmk_seq; Type: SEQUENCE SET; Schema: public; Owner: mavis
+--
+
+SELECT pg_catalog.setval('public.investigation_location_prmk_seq', 5, true);
+
+
+--
+-- Name: members_prmk_seq; Type: SEQUENCE SET; Schema: public; Owner: mavis
+--
+
+SELECT pg_catalog.setval('public.members_prmk_seq', 7, true);
+
+
+--
+-- Name: pet_prmk_seq; Type: SEQUENCE SET; Schema: public; Owner: mavis
+--
+
+SELECT pg_catalog.setval('public.pet_prmk_seq', 8, true);
+
+
+--
+-- Name: shelter_admin_prmk_seq; Type: SEQUENCE SET; Schema: public; Owner: mavis
+--
+
+SELECT pg_catalog.setval('public.shelter_admin_prmk_seq', 5, true);
+
+
+--
+-- Name: shelter_prmk_seq; Type: SEQUENCE SET; Schema: public; Owner: mavis
+--
+
+SELECT pg_catalog.setval('public.shelter_prmk_seq', 5, true);
+
+
+--
+-- Name: web_admin_prmk_seq; Type: SEQUENCE SET; Schema: public; Owner: mavis
+--
+
+SELECT pg_catalog.setval('public.web_admin_prmk_seq', 1, true);
+
+
+--
+-- PostgreSQL database dump complete
+--
+

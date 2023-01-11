@@ -1,3 +1,26 @@
+<?php
+   require_once 'db.php';
+   $category="<option>無限制</option>\n";
+   $sql  = "select distinct category from pet";
+   $result =$db->query($sql);
+   while($row=$result->fetchRow()){
+      $category.='<option>'.$row[0]."</option>\n";
+   }
+
+   $sex="<option>無限制</option>\n";
+   $sql  = "select distinct sex from pet";
+   $result =$db->query($sql);
+   while($row=$result->fetchRow()){
+      $sex.='<option>'.$row[0]."</option>\n";
+   }
+ 
+   $shelter="<option>無限制</option>\n";
+   $sql  = "select distinct shelter from pet";
+   $result =$db->query($sql);
+   while($row=$result->fetchRow()){
+      $shelter.='<option>'.$row[0]."</option>\n";
+   }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,7 +78,7 @@
             <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                 <div class="navbar-nav mr-auto py-0">
                     <a href="index.html" class="nav-item nav-link ">浪浪公告</a>
-                    <a href="service.html" class="nav-item nav-link">浪浪目錄</a>
+                    <a href="service.php" class="nav-item nav-link">浪浪目錄</a>
                     <a href="about.html" class="nav-item nav-link">收容所</a>
                     <a href="contact.html" class="nav-item nav-link">支持我們</a>
                 </div>
@@ -163,28 +186,21 @@
             <div class="row align-items-center">
                 <div class="col-lg-5">
                     <div class="bg-primary py-5 px-4 px-sm-5">
-                        <form class="py-5">
+                        <form class="py-5" method="post" action="query.php">
                             <div class="form-group">
-                                <select class="custom-select border-0 px-4" style="height: 47px;">
-                                    <option selected>選擇寵物類型</option>
-                                    <option value="0">無限制</option>
-                                    <option value="1">貓</option>
-                                    <option value="2">狗</option>
+                                <select class="custom-select border-0 px-4" style="height: 47px;" name="category">
+                                    <?php echo $category;?> 
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="custom-select border-0 px-4" style="height: 47px;">
-                                    <option selected>選擇性別</option>
-                                    <option value="0">無限制</option>
-                                    <option value="1">公</option>
-                                    <option value="2">母</option>
+                                <select class="custom-select border-0 px-4" style="height: 47px;" name="sex">
+                                    <?php echo $sex;?> 
                                 </select>
                             </div>
 
                             <div class="form-group">
-                                <select class="custom-select border-0 px-4 " style="height: 47px;">
-                                    <option selected>選擇收容所</option>
-                                    <option value="0">無限制</option>
+                                <select class="custom-select border-0 px-4 " style="height: 47px;" name="shelter">
+                                    <?php echo $shelter;?> 
                                 </select>
                             </div>
                             <div>
@@ -233,83 +249,6 @@
                                 <p class="m-0">選個方便前往的收容所，來看看那邊有甚麼心儀的浪浪吧</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container mt-5 pt-5 pb-3" >
-        <div class="d-flex flex-column text-center mb-5">
-            <h1 class="display-4 m-0"><span class="text-primary">浪浪</span>目錄</h1>
-        </div>
-        <div class="row">
-            <div class="col-lg-3 col-md-6">
-                <div class="team card position-relative overflow-hidden border-0 mb-4">
-                    <!-- class = "team" 更改介紹欄大小-->
-                    <img class="card-img-top" src="img/Pet001.png" style="height: 300px;width: 255px;" alt="">
-                    <div class="card-body text-center p-0">
-                        <div class="team-text d-flex flex-column justify-content-center bg-light">
-                            <h5>類別:<span>貓</span></h5>
-                            <h5>性別:<span>公</span></h5>
-                            <h5>品種:<span>混種貓</span></h5>
-                            <h5>收容所:<span>未知</span></h5>
-                        </div>
-                        <div class="team-social d-flex align-items-center justify-content-center bg-dark">
-                            <!-- class = "team-social" 更改隱藏欄位-->
-                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="pet.html"><i class="fas fa-angle-double-right"></i></a>
-                            <a style="color:#ED6436;">詳細資訊</a> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="team card position-relative overflow-hidden border-0 mb-4">
-                    <img class="card-img-top" src="img/Pet002.jpg" style="height: 300px;width: 255px;" alt="">
-                    <div class="card-body text-center p-0">
-                        <div class="team-text d-flex flex-column justify-content-center bg-light">
-                            <h5>類別:<span>貓</span></h5>
-                            <h5>性別:<span>公</span></h5>
-                            <h5>品種:<span>虎斑貓</span></h5>
-                            <h5>收容所:<span>未知</span></h5>
-                        </div>
-                        <div class="team-social d-flex align-items-center justify-content-center bg-dark">
-                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="pet.html"><i class="fas fa-angle-double-right"></i></a>
-                            <a style="color:#ED6436;">詳細資訊</a> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="team card position-relative overflow-hidden border-0 mb-4">
-                    <img class="card-img-top" src="img/Pet003.png" style="height: 300px;width: 255px;" alt="">
-                    <div class="card-body text-center p-0">
-                        <div class="team-text d-flex flex-column justify-content-center bg-light">
-                            <h5>類別:<span>貓</span></h5>
-                            <h5>性別:<span>母</span></h5>
-                            <h5>品種:<span>白貓</span></h5>
-                            <h5>收容所:<span>未知</span></h5>
-                        </div>
-                        <div class="team-social d-flex align-items-center justify-content-center bg-dark">
-                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="pet.html"><i class="fas fa-angle-double-right"></i></a>
-                            <a style="color:#ED6436;">詳細資訊</a> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="team card position-relative overflow-hidden border-0 mb-4">
-                    <img class="card-img-top" src="img/Pet004.png" style="height: 300px;width: 255px;" alt="">
-                    <div class="card-body text-center p-0">
-                        <div class="team-text d-flex flex-column justify-content-center bg-light">
-                            <h5>類別:<span>狗</span></h5>
-                            <h5>性別:<span>公</span></h5>
-                            <h5>品種:<span>邊境牧羊犬</span></h5>
-                            <h5>收容所:<span>未知</span></h5>
-                        </div>
-                        <div class="team-social d-flex align-items-center justify-content-center bg-dark">
-                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="pet.html"><i class="fas fa-angle-double-right"></i></a>
-                            <a style="color:#ED6436;">詳細資訊</a> 
                     </div>
                 </div>
             </div>
